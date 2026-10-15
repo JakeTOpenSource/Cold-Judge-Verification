@@ -27,6 +27,7 @@ Everything here describes work that is finished and on record. Dates, hashes, an
 ## Contents
 
 ```
+.gitattributes                     keeps every file byte-exact on checkout (no line-ending conversion)
 README.md                          this file
 protocol/
   cold-judge-spec.md               the principle, defined terms, numbered requirements
