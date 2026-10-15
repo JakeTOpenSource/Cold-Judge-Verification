@@ -75,6 +75,7 @@ Full definitions are in `protocol/cold-judge-spec.md`. The short forms:
 | pilot-001 evaluation: sealed, executed on two tracks, contradiction resolved, independently audited twice, accepted by the owner | 2026-09-23 | https://github.com/JakeTOpenSource/parallel-advisor-pilot-001 |
 | Cold-judge principle first written down as a standalone rule | 2026-09-25 | owner's working notes; stated in `protocol/cold-judge-spec.md` |
 | Custodial hash conduit v0.3: declaration signed, freeze manifest recorded (23 entries), test suite recorded at 23 of 23 | 2026-10-08 | distribution bundle `hash-conduit-v0.3.zip`, SHA-256 `40ed8e58237e7abb0ffce8d26380a39fbd8c5b4ff73425849abeedbe1e81cc15`; described in `protocol/records-integrity.md` |
+| Custodial hash conduit v0.4: two files changed over v0.3 (checker exec-failure recorded as HOLD, checker identity recorded, test-harness portability), declaration signed, 23-entry freeze, 26 of 26 tests | 2026-10-15 | distribution bundle `hash-conduit-v0.4.zip`, SHA-256 `89f84517b485f653b52304403779af4ae83cc6a1db470d66d551fc7885164d94`; described in `protocol/records-integrity.md` |
 | This repository assembled from the records above | 2026-10-15 | here |
 
 The author of the underlying work is Jacob Tiller. The pilot-001 record names the other parties and their roles; this repository repeats those attributions and adds none.

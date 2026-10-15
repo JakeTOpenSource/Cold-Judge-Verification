@@ -56,9 +56,17 @@ To keep the record of an evaluation tamper-evident: any change to a claim, a pie
 
 - Bundle hash: matched the value above.
 - Freeze manifest: 23 of 23 entries OK.
-- Test suite: 19 of 23 passed. The four that did not (H, K1, K2, K3) failed in the test harness, not in the tool. One assertion compares a recorded path against a forward-slash pattern, which a Windows path does not match. Three tests use POSIX shell scripts as stand-ins for the checker binary, which Windows cannot execute (the tool records the operating system's error and reports the link as TRIP, which is the correct response to a checker that cannot run). The same binding check, rerun by hand with a Windows-executable stand-in, reported PASS with the reason that a theorem ascribed to the claim checks. The declaration's 23 of 23 is the result on the platform it was recorded on; the harness's platform assumptions are a portability limit of the test script and are noted here so that a reader on Windows is not surprised.
+- Test suite: 19 of 23 passed. The four that did not (H, K1, K2, K3) failed in the test harness, not in the tool. One assertion compares a recorded path against a forward-slash pattern, which a Windows path does not match. Three tests use POSIX shell scripts as stand-ins for the checker binary, which Windows cannot execute (the tool records the operating system's error and reports the link as TRIP; under the taxonomy in `findings-classification.md` a checker that cannot run is a HOLD, not a TRIP; the v0.3 tool does not make that distinction and v0.4, below, does). The same binding check, rerun by hand with a Windows-executable stand-in, reported PASS with the reason that a theorem ascribed to the claim checks. The declaration's 23 of 23 is the result on the platform it was recorded on; the harness's platform assumptions are a portability limit of the test script and are noted here so that a reader on Windows is not surprised.
 
 None of this alters the frozen state.
+
+**v0.4, frozen 2026-10-15.** Two files changed against v0.3; every other file is byte-identical. The tool (version 0.4.0) now records a checker binary that cannot be executed as HOLD, with the reason that the checker was unavailable, instead of TRIP with the reason that the checker failed, and it records the resolved path, SHA-256, and version line of the checker that ran. The test script writes its stand-in checker binaries in a form Windows can execute, normalises path separators in one assertion, and adds two checks for the two tool changes. The declaration reproduces the v0.3 text without change, quotes the owner's written approval, and states that the signature line was recorded by the owner's agent at his instruction. Result at the freeze: 26 of 26 on Windows 11, twice, with byte-identical output, verified again from a clean extraction of the distribution zip. The POSIX branch of the test script was not executed at the freeze. A ledger tool developed alongside the conduit is not part of v0.4; its last review ended No-go.
+
+| Item | Value |
+|---|---|
+| Declaration | `DECLARATION.md`, status line reads: signed by Jacob Tiller, 2026-10-15. |
+| Freeze manifest | `FREEZE.md`, 23 entries. Three lines differ from v0.3: `DECLARATION.md`, `conduit.py`, `run-tests.sh`. |
+| Distribution bundle | `hash-conduit-v0.4.zip`, SHA-256 `89f84517b485f653b52304403779af4ae83cc6a1db470d66d551fc7885164d94` |
 
 ## 5. Applying the chain to audit evidence
 
